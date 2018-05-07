@@ -1,18 +1,23 @@
 <?php
 	session_start();
-	include "conexao.php";
-	$cod = $_GET["cod"];
+	include "conexao.php"; //conexão com o banco de dados 
 	
-	$pesquisa = mysql_query ("SELECT cod_fun,cpf_fun,end_fun,login_fun,senha_fun,nome_fun,tel_fun,acesso_fun,ativo_fun FROM funcionario WHERE cod_fun= '$cod'") or die(mysql_error());
+	$cod_funcionario = $_GET["cod"];// vai receber o codigo do funcionário que foi solicitado fazer a alteracao na pagina funcionario.php
 	
-	$nome_fun = mysql_result ($pesquisa, 0, "nome_fun");
-	$cpf_fun = mysql_result ($pesquisa, 0, "cpf_fun");
-	$end_fun = mysql_result ($pesquisa, 0, "end_fun");
-	$tel_fun = mysql_result ($pesquisa, 0, "tel_fun");
-	$login_fun = mysql_result ($pesquisa, 0, "login_fun");
-	$senha_fun = mysql_result ($pesquisa, 0, "senha_fun");
-	$acesso_fun = mysql_result ($pesquisa, 0, "acesso_fun");
-	$ativo_fun = mysql_result ($pesquisa, 0, "ativo_fun");
+	$pesquisa = mysqli_query ($link, "SELECT * FROM funcionario WHERE codigo_funcionario= '$cod_funcionario'") or die(mysql_error()); //seleciona todos os campos de acordo com o código fornecio em funcionario
+	$values = mysqli_fetch_array($pesquisa); //A função mysqli_fetch_assoc () busca uma linha de resultado como uma matriz associativa.	
+	/* echo $values['nome_funcionario'];
+	echo $values['sexo_funcionario'];
+	echo $values['cpf_funcionario'];
+	echo $values['rg_funcionario'];
+	echo $values['endereco_funcionario'];
+	echo $values['telefone1_funcionario'];
+	echo $values['telecone2_funcionario'];
+	echo $values['email_funcionario'];
+	echo $values['login_funcionario'];
+	echo $values['senha_funcionario'];
+	echo $values['ativo_funcionario']; */
+			
 ?>
 <html>
 	<head>
@@ -45,27 +50,33 @@
 		</div>	
 		<div id="corpo">
 			<div id="opcao">
-				<div id="dados">
-					<form action="processa_altera_funcionario.php" method="post">
-					<input type="hidden" name="codigo" value="<?php echo "$cod"; ?>" />
-						<p/>Nome: <input type="text" name="nome"value="<?php echo "$nome_fun"?>">
-						<p/>Login: <input type="text" name="login"value="<?php echo "$login_fun"?>">
-						<p/>Senha: <input type="text" name="senha"value="<?php echo "$senha_fun"?>">
-						<p/>CPF: <input type="text" name="cpf" value="<?php echo "$cpf_fun"?>">
-						<p/>Endereço: <input type="text" name="end" value="<?php echo "$end_fun"?>">
-						<p/>Telefone: <input type="text" name="tel" value="<?php echo "$tel_fun"?>">						
-						<p/><label for="acesso">Acesso:</label>
-						<select name="acesso"/> 
-							<option value ="sel">Selecione</option>
-							<option value="adm">Administrador</option> 
-							<option value="fun">Funcionario</option>
-						</select>						
-						<p/><label for="ativo">Ativo</label>
-						 <select name="ativo">
-							 <option value="sel">Selecione...</option>
-							 <option value="sim">Ativo</option>
-							 <option value="nao">Inativo</option>
-						 </select>
+				<div id="dados">						
+					<form action="processa_altera_funcionariocionario.php" method="post">
+						<input type="hidden" name="codigo" value="<?php echo $values['$cod_funcionario'];?>"/>
+						<table width="560" align="center" border="1px">
+							<p/>Nome: <input type="text" name="nome"value="<?php echo $values['nome_funcionario'];?>">
+							<p/>Sexo: <input type="text" name="sexo"value="<?php echo $values['sexo_funcionario'];?>">
+							<p/>CPF: <input type="text" name="cpf"value="<?php echo $values['cpf_funcionario'];?>">
+							<p/>RG: <input type="text" name="rg"value="<?php echo $values['rg_funcionario'];?>">
+							<p/>Endereço: <input type="text" name="endereco" value="<?php echo $values['endereco_funcionario'];?>">
+							<p/>Telefone 1: <input type="text" name="telefone1" value="<?php echo $values['telefone1_funcionario'];?>"> 						
+							<p/>Telefone 2: <input type="text" name="telefone2" value="<?php echo $values['telecone2_funcionario'];?>">						
+							<p/>Email: <input type="text" name="email" value="<?php echo $values['email_funcionario'];?>">
+							<p/>Login: <input type="text" name="login"value="<?php echo $values['login_funcionario'];?>">
+							<p/>Senha: <input type="text" name="senha"value="<?php echo $values['senha_funcionario'];?>">			
+							<p/><label for="acesso">Acesso:</label>
+							<select name="acesso"/> 
+								<option value ="sel">Selecione...</option>
+								<option value="adm">Administrador</option> 
+								<option value="fun">Funcionario</option>
+							</select>						
+							<p/><label for="ativo">Ativo</label>
+							 <select name="ativo">
+								 <option value="sel">Selecione...</option>
+								 <option value="sim">Ativo</option>
+								 <option value="nao">Inativo</option>
+							 </select>
+						</table>	 
 							<h4>Não esqueça de selecionar ACESSO e ATIVO </h4>
 						</p><input type="submit" value="Alterar">
 						<a href="funcionario.php">Voltar</a>

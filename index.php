@@ -1,10 +1,10 @@
-﻿<?php
+﻿<?
 	session_start();
 	include "conexao.php";
 ?>
 <html>
 	<head>
-		<title>Pagina de Estudo</title>
+		<title>Pagina de acesso</title>
 		<link href="estilos/style.css"rel="stylesheet" type="text/css" />
 		<script language="javascript" type="text/javascript">
 			function validar(){

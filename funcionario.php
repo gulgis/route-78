@@ -4,7 +4,7 @@
 ?>
 <html>
 	<head>
-		<title>Pagina de Estudo</title>
+		<title>Pagina Funcionario</title>
 		<link href="estilos/style.css"rel="stylesheet" type="text/css" />	
 	</head>
 	<body>
@@ -34,24 +34,40 @@
 		<div id="corpo">
 			<div id="opcao">
 				<div id="dados">
+				<br/>
 					<?php
-						$pesquisa = mysql_query ("SELECT cod_fun,cpf_fun,end_fun,login_fun,senha_fun,nome_fun,tel_fun,acesso_fun,ativo_fun FROM funcionario");
-						$rows = mysql_num_rows($pesquisa);
-						for ($cont = 0; $cont < $rows; $cont++){
-						$cod_fun = mysql_result($pesquisa,$cont,"cod_fun");
-						$nome_fun = mysql_result ($pesquisa,$cont,"nome_fun");
-					?>
-					<table cellpadding=3>
-					<tr>
-						<td width="300px"><h3><?php echo "$nome_fun";?></h3></td>
-						<td width="300px"><a href="altera_funcionario.php?cod=<?php echo "$cod_fun";?>">Alterar</a></td>				
-					<tr/>	
-					</table>
-					<?php
+						/*este é o código que le cada linha para ver se há mais registos*/
+						$pesquisa = mysqli_query($link, "SELECT * FROM funcionario");
+						$rows = mysqli_fetch_assoc($pesquisa); //A função mysqli_fetch_assoc () busca uma linha de resultado como uma matriz associativa.	
+						if(!$rows){
+							echo "Sem Resultados.";
+						}else{
+							do{
+								/*Este bloco de código gera uma tablea onde será apresentado o nome e o código do fincionário*/
+								?>
+								<table width="560"  align="center" border="1px" >
+								<tr>
+									<td width="500px" height="20px"><h3>NOME DO FUNCIONARIO</h3></td>
+									<td width="200px" height="20px"><h3>CÓDIGO</h3></td>		
+									<td width="200px" height="20px"><h3>FUNÇÃO</h3></td>
+								<tr/>
+								<tr>
+									<td width="500px" height="15px"><h3><?php echo sprintf ("%s <br/>", $rows["nome_funcionario"]);?></h3></td>
+									<td width="200px" height="15px"><h3><?php echo sprintf ("%s <br/>", $cod_funcionario = $rows["codigo_funcionario"]);?></h3></td>		
+									<td width="200px" height="15px"><a href="altera_funcionario.php?cod=<?php echo "$cod_funcionario";?>"><h3>Alterar</h3></a></td>
+	
+								<tr/>
+									
+								</table>
+								<?php
+							}while($rows = mysqli_fetch_assoc($pesquisa));
+								
+						
+					
 						}
 					?>
 					<p/>
-						<a href="cadastra_funcionario.php">Adicionar Funcionario</a>
+						<a href="cadastra_funcionariocionario.php">Adicionar Funcionario</a>
 					<br/>
 						<a href="index2.php">Voltar</a>						
 				</div>

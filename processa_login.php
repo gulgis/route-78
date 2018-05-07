@@ -5,8 +5,10 @@
 	$login = $_POST["login"];
 	$senha = $_POST["senha"];
 	
-	$resultado = mysql_query("SELECT login_fun,senha_fun FROM funcionario WHERE login_fun = '$login' AND senha_fun = '$senha' AND ativo_fun = 1");
-	$linha = mysql_num_rows($resultado);
+	$resultado = mysqli_query($link, "SELECT login_funcionario,senha_funcionario 
+							  FROM funcionario 
+							  WHERE login_funcionario = '$login' AND senha_funcionario = '$senha' AND ativo_funcionario = 1");
+	$linha = mysqli_num_rows($resultado);
 	
 	if ($linha == true){
 		$_SESSION ["login"] = $login;
