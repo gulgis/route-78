@@ -3,8 +3,7 @@
 
 * Estes é um projeto das disciplinas Técnicas de Programação e Fundamentos de Estrutura de Dados ministradas no Centro Universitário do Distrito Federal, UDF.
 
-
-* Membros da equipe:
+# Membros da equipe:
 
  * [Lucas Vinícius](https://github.com/MitradirTheLastMexicano)
  * [Thalis Rodrigues](https://github.com/ThalisRodrigues)
