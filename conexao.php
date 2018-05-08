@@ -3,7 +3,7 @@
 	$servidor = "localhost";
 	$banco = "route-78";
 	$usuario = "root";
-	$senha = "";
+	$senha = "root";
 	$link = @mysqli_connect($servidor, $usuario, $senha) or die ("Não foi possivel conectar ao Banco");
 	$sql_banco = mysqli_select_db($link,$banco);
 

@@ -3,7 +3,7 @@
 	include "conexao.php";
 	$cod = $_GET["cod"];
 	
-	$pesquisa = mysql_query ("SELECT cod_fun,cpf_fun,end_fun,login_fun,senha_fun,nome_fun,tel_fun,acesso_fun,ativo_fun FROM funcionario WHERE cod_fun= '$cod'") or die(mysql_error());
+	//$pesquisa = mysql_query ("SELECT cod_fun,cpf_fun,end_fun,login_fun,senha_fun,nome_fun,tel_fun,acesso_fun,ativo_fun FROM funcionario WHERE cod_fun= '$cod'") or die(mysql_error());
 	
 ?>
 <html>
