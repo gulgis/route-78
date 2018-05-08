@@ -21,7 +21,7 @@ USE `route78` ;
 -- Table `route78`.`funcionario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `route78`.`funcionario` (
-  `codigo_funcionario` INT NOT NULL,
+  `codigo_funcionario` INT NOT NULL AUTO_INCREMENT,
   `nome_funcionario` VARCHAR(45) NOT NULL,
   `sexo_funcionario` VARCHAR(45) NOT NULL,
   `cpf_funcionario` VARCHAR(45) NOT NULL,
@@ -42,7 +42,7 @@ ENGINE = InnoDB;
 -- Table `route78`.`cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `route78`.`cliente` (
-  `codigo_cliente` INT NOT NULL,
+  `codigo_cliente` INT NOT NULL AUTO_INCREMENT,
   `nome_cliente` VARCHAR(45) NOT NULL,
   `tipo_cliente` VARCHAR(45) NOT NULL,
   `cpf_cliente` VARCHAR(45) NOT NULL,
@@ -58,7 +58,7 @@ ENGINE = InnoDB;
 -- Table `route78`.`pedido`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `route78`.`pedido` (
-  `cod_pedido` INT NOT NULL,
+  `cod_pedido` INT NOT NULL AUTO_INCREMENT,
   `data_pedido` DATE NOT NULL,
   `hora_pedido` DATETIME NOT NULL,
   `subtotal_pedido` DOUBLE NOT NULL,
@@ -85,7 +85,7 @@ ENGINE = InnoDB;
 -- Table `route78`.`produto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `route78`.`produto` (
-  `codigo_produto` INT NOT NULL,
+  `codigo_produto` INT NOT NULL AUTO_INCREMENT,
   `nome_produto` VARCHAR(45) NOT NULL,
   `descricao_produto` TEXT(500) NOT NULL,
   `estoque_produto` VARCHAR(45) NOT NULL,

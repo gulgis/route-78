@@ -1,6 +1,5 @@
 ﻿<?
-	session_start();
-	include "conexao.php";
+	require_once('conexao.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,25 +13,6 @@
     <!-- Ultima versão do minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
-
-
-
-    <script language="javascript" type="text/javascript">
-        function validar(){
-            var login = form_login.login.value;
-            var senha = form_login.senha.value;
-            if (login == ""){
-                alert ("Login em Branco");
-                form_login.nome.focus();
-                return false;
-            }
-            if (senha == ""){
-                alert ("Senha em Branco");
-                form_login.senha.focus();
-                return false;
-            }
-        }
-    </script>
 </head>
 
 

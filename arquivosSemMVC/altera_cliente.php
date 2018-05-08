@@ -3,14 +3,17 @@
 	include "conexao.php";
 	$cod = $_GET["cod"];
 	
-	$pesquisa = mysql_query("SELECT cod_marca, nome_marca FROM marca WHERE cod_marca= '$cod'")or die(mysql_error());
+	$pesquisa = mysql_query("SELECT cpf_cli,end_cli,nome_cli,tel_cli FROM cliente WHERE cod_cli = '$cod'") or die(mysql_error());
 	
-	$nome_marca = mysql_result ($pesquisa, 0, "nome_marca");
+	$nome_cli = mysql_result ($pesquisa, 0, "nome_cli");
+	$cpf_cli = mysql_result ($pesquisa, 0, "cpf_cli");
+	$end_cli = mysql_result ($pesquisa, 0, "end_cli");
+	$tel_cli = mysql_result ($pesquisa, 0, "tel_cli");
 ?>
 <html>
 	<head>
 		<title>Pagina de Estudo</title>
-		<link href="estilos/style.css"rel="stylesheet" type="text/css" />	
+		<link href="../estilos/style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 	<div id="body">	
@@ -22,7 +25,7 @@
 					?>
 				</div>
 				<table id="logo_table">					
-					<td width=350><a href="index2.php"><img src="imagens/logo.png" width=100 height=100/></a></td>
+					<td width=350><a href="index2.php"><img src="../imagens/logo.png" width=100 height=100/></a></td>
 					<td width=250>
 						<div id='search-box'>
 							<form action="busca.php" id='search-form' method='get' target='_top'>
@@ -39,11 +42,14 @@
 		<div id="corpo">
 			<div id="opcao">
 				<div id="dados">
-					<form action="processa_altera_marca.php" method="post">
+					<form action="processa_altera_cliente.php" method="post">
 					<input type="hidden" name="codigo" value="<?php echo "$cod"; ?>" />
-						<p/>Nome da Marca: <input type="text" name="nome_marca"value="<?php echo "$nome_marca"?>">
+						<p/>Nome: <input type="text" name="nome"value="<?php echo "$nome_cli"?>">
+						<p/>CPF: <input type="text" name="cpf" value="<?php echo "$cpf_cli"?>">
+						<p/>Endereço: <input type="text" name="end" value="<?php echo "$end_cli"?>">
+						<p/>Telefone: <input type="text" name="tel" value="<?php echo "$tel_cli"?>">						
 						</p><input type="submit" value="Alterar">
-						<a href="marca.php">Voltar</a>
+						<a href="cliente.php">Voltar</a>
 					</form>
 				</div>
 			</div>

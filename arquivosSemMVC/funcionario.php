@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<title>Pagina Funcionario</title>
-		<link href="estilos/style.css"rel="stylesheet" type="text/css" />	
+		<link href="../estilos/style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 	<div id="body">	
@@ -17,7 +17,7 @@
 					?>
 				</div>
 				<table id="logo_table">					
-					<td width=350><a href="index2.php"><img src="imagens/logo.png" width=100 height=100/></a></td>
+					<td width=350><a href="index2.php"><img src="../imagens/logo.png" width=100 height=100/></a></td>
 					<td width=250>
 						<div id='search-box'>
 							<form action="busca.php" id='search-form' method='get' target='_top'>
@@ -54,7 +54,7 @@
 								<tr>
 									<td width="500px" height="15px"><h3><?php echo sprintf ("%s <br/>", $rows["nome_funcionario"]);?></h3></td>
 									<td width="200px" height="15px"><h3><?php echo sprintf ("%s <br/>", $cod_funcionario = $rows["codigo_funcionario"]);?></h3></td>		
-									<td width="200px" height="15px"><a href="altera_funcionario.php?cod=<?php echo "$cod_funcionario";?>"><h3>Alterar</h3></a></td>
+									<td width="200px" height="15px"><a href="altera_funcionario.php?cod=<?php echo "><h3>Alterar</h3></a></td>
 	
 								<tr/>
 									

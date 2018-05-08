@@ -19,7 +19,7 @@
 <html>
 	<head>
 		<title>Pagina de Estudo</title>
-		<link href="estilos/style.css"rel="stylesheet" type="text/css" />	
+		<link href="../estilos/style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 	<div id="body">	
@@ -31,7 +31,7 @@
 					?>
 				</div>
 				<table id="logo_table">					
-					<td width=350><a href="index2.php"><img src="imagens/logo.png" width=100 height=100/></a></td>
+					<td width=350><a href="index2.php"><img src="../imagens/logo.png" width=100 height=100/></a></td>
 					<td width=250>
 						<div id='search-box'>
 							<form action="busca.php" id='search-form' method='get' target='_top'>
