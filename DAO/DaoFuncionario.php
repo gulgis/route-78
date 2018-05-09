@@ -1,5 +1,5 @@
 <?php
-require_once "../conexao.php";
+require_once "../utilidades/conexao.php";
 
 
 class DaoFuncionario
