@@ -53,4 +53,4 @@ $RECYCLE.BIN/
 # config do banco e outros
 config.php
 
-*.idea
+.idea/
