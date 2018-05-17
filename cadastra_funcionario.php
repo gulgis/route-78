@@ -94,7 +94,7 @@ session_start();
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                <label for="selectTipo">Sexo</label>
+                                <label for="selectTipo">Tipo de Funcionário</label>
                                 <select class="form-control" name="selectTipo" id="selectTipo">
                                     <option>Gerente</option>
                                     <option>Atendente</option>

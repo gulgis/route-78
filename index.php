@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
+                        <a class="nav-link" href="#">Home</a>
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -67,7 +67,7 @@
                                     <input class="form-check-input" type="checkbox"> Remember Password</label>
                             </div>
                         </div>
-                        <a class="btn btn-primary btn-block" href="index.html">Entrar</a>
+                        <a class="btn btn-primary btn-block" href="index.html">Entrar</a><!-- Vai ser redirecionada pra onde?-->
                     </form>
                     <div class="text-center">
 
