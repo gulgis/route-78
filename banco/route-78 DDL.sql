@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `route78`.`funcionario` (
   `nome_funcionario` VARCHAR(45) NOT NULL,
   `sexo_funcionario` VARCHAR(45) NOT NULL,
   `cpf_funcionario` VARCHAR(45) NOT NULL,
-  `rg_funcionario` VARCHAR(45) NULL,
+  `rg_funcionario` VARCHAR(45) NOT NULL,
   `telefone_funcionario` VARCHAR(45) NOT NULL,
   `email_funcionario` VARCHAR(45) NOT NULL,
   `login_funcionario` VARCHAR(45) NOT NULL,
@@ -47,8 +47,8 @@ CREATE TABLE IF NOT EXISTS `route78`.`cliente` (
   `tipo_cliente` VARCHAR(45) NOT NULL,
   `cpf_cliente` VARCHAR(45) NOT NULL,
   `telefone_cliente` VARCHAR(45) NOT NULL,
-  `email_cliente` VARCHAR(45) NULL,
-  `endereco_cliente` VARCHAR(100) NULL,
+  `email_cliente` VARCHAR(45) NOT NULL,
+  `endereco_cliente` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`codigo_cliente`),
   UNIQUE INDEX `email_cliente_UNIQUE` (`email_cliente` ASC))
 ENGINE = InnoDB;
